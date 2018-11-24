@@ -7,7 +7,9 @@ router.post('/', function(req, res, next) {
   	username:req.body.username,
   	password:req.body.password
   }).save().then(result=>{
-  	res.send('注册成功')
+  	res.send('true');
+  }).catch(err=>{
+  	res.send('false');
   })
 });
 

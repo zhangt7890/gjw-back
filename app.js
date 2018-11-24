@@ -25,6 +25,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  name:'NodeID',
+  secret:'aaaa',
+  cookie:{maxAge: 1000*3600 }, //1小时
+  resave: true,
+  saveUninitialized: true
+}));
+
 app.use('/', indexRouter);
 app.use('/v4/register', registerRouter);
 app.use('/v4/login', loginRouter);
