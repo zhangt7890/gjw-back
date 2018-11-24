@@ -10,7 +10,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-mongoose.connect("mongodb://localhost:27017/gjw", { useNewUrlParser: true });
+mongoose.connect("mongodb://10.2.157.50:27017/gjw", { useNewUrlParser: true });
 
 var app = express();
 
